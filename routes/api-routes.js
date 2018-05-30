@@ -36,17 +36,17 @@ module.exports = function(app) {
   });
 
   // put route for updated burger
-  // app.put("/burgers/:id", function(req, res) {
-  //   db.Burger.update({
-  //     // complete: req.body.complete
-  //   }, {
-  //     where: {
-  //       id: req.body.id
-  //     }
-  //   }).then(function(result) {
-  //     console.log('burger updated');
-  //     res.json(result);
-  //   });
-  // });
+  app.put("/burgers/:id", function(req, res) {
+    db.Burger.update({
+      devoured: req.body.devoured
+    }, {
+      where: {
+        id: req.params.id
+      }
+    }).then(function(result) {
+      console.log('burger updated');
+      res.json(result);
+    });
+  });
 };
 
