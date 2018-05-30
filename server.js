@@ -6,13 +6,13 @@ var app = express();
 var PORT = process.env.PORT || 8080;
 
 var db = require("./models");
-// Static directory
-app.use(express.static("public"));
 
 // parse application/x-www-form-urlencoded
 app.use(bodyParser.urlencoded({ extended: true }));
 // parse application/json
 app.use(bodyParser.json());
+// Static directory
+app.use(express.static("public"));
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
