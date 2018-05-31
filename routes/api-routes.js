@@ -27,7 +27,7 @@ module.exports = function(app) {
     //   // createdAt: req.body.created_at
     }).then(function(result) {
       // `result` here would be the newly created burger
-    //   // console.log(result);
+      // console.log(result);
       res.json(result);
     }).catch(function(err) {
       //if there is an error, send it to the client js

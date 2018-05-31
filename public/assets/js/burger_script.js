@@ -29,14 +29,14 @@
       burger_name: $("#new-burger-input").val().trim()
       // created_at: moment().format("YYYY-MM-DD HH:mm:ss")
     };
-    console.log(newBurger);
+    // console.log(newBurger);
     // ajax call with post method with new burger data above
     $.ajax("/burgers/new", {
       type: "POST",
       data: newBurger
     }).done(function(data) {
       // once done, log new burger added and reload the location
-      console.log("new burger added");
+      // console.log("new burger added");
       location.reload();
     });
   });
