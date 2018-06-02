@@ -36,4 +36,4 @@ Google Fonts and Bootsrap provide for a polished UI, and Heroku's hosting combin
 
   `node server.js`
 
-- Good Burger 2 runs locally on port 8080. Open your favorite web browser and navigate to localhost:3000 and check out Good Burger!
+- Good Burger 2 runs locally on port 8080. Open your favorite web browser and navigate to localhost:8080 and check out Good Burger!
