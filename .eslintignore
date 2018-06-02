@@ -1,0 +1,3 @@
+# this is an example if we wanted to have eslint ignore everything in our assets folder.
+# this would typically be added to third party code, any custom code we do not write.
+# public/assets/*
