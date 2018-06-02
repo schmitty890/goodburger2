@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
+    "eslint": "eslint",
     "watch": "nodemon server.js"
   },
   "repository": {
@@ -26,6 +27,7 @@
     "sequelize": "^4.37.10"
   },
   "devDependencies": {
+    "eslint": "^4.19.1",
     "nodemon": "^1.17.5"
   }
 }

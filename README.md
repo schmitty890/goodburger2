@@ -36,4 +36,11 @@ Google Fonts and Bootsrap provide for a polished UI, and Heroku's hosting combin
 
   `node server.js`
 
+This Project uses EditorConfig to standardize text editor configuration.
+Visit [https://editorconfig.org/](https://editorconfig.org/)
+
+This Project uses ESLint to detect suspicious code in JavaScript files.
+Visit [https://eslint.org/](https://eslint.org/)
+Run `npm run -s eslint .` to see ESLint errors and warnings.
+
 - Good Burger 2 runs locally on port 8080. Open your favorite web browser and navigate to localhost:8080 and check out Good Burger!
