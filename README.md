@@ -43,4 +43,6 @@ This Project uses ESLint to detect suspicious code in JavaScript files.
 Visit [https://eslint.org/](https://eslint.org/)
 Run `npm run -s eslint .` to see ESLint errors and warnings.
 
+This project uses gulp to convert sass into css files. To watch sass files, run `gulp` and edit the sass files, then save and see the css files in `/public/assets/css` have updated. This project hardly has any css in it, however this is a good intro to how gulp works and can convert sass into css.
+
 - Good Burger 2 runs locally on port 8080. Open your favorite web browser and navigate to localhost:8080 and check out Good Burger!
