@@ -1,8 +1,10 @@
+$red: #AB0000;
+$white: #fff;
 /* change background color and font color, all fonts to google font */
 body {
-  background-color: #AB0000;
+  background-color: $red;
   font-family: "Play";
-  color: #fff;
+  color: $white;
 }
 
 /* row spacing */
