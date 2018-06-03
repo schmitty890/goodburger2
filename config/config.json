@@ -16,8 +16,6 @@
     "dialect": "mysql"
   },
   "production": {
-    "use_env_variable":"JAWSDB_URL",
-    "port": 3306,
-    "dialect": "mysql"
+    "use_env_variable":"JAWSDB_URL"
   }
 }
