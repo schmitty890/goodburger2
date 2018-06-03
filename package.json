@@ -5,11 +5,9 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "gulp",
     "start": "node server.js",
     "eslint": "eslint",
-    "watch": "nodemon server.js",
-    "postinstall": "gulp default"
+    "watch": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -26,9 +24,7 @@
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "mysql2": "^1.5.3",
-    "sequelize": "^4.37.10",
-    "gulp": "^3.9.1",
-    "gulp-sass": "^4.0.1"
+    "sequelize": "^4.37.10"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
