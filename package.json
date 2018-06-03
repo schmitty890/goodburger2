@@ -25,7 +25,9 @@
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
     "mysql2": "^1.5.3",
-    "sequelize": "^4.37.10"
+    "sequelize": "^4.37.10",
+    "gulp": "^3.9.1",
+    "gulp-sass": "^4.0.1",
   },
   "devDependencies": {
     "eslint": "^4.19.1",
