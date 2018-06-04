@@ -27,14 +27,13 @@ Google Fonts and Bootsrap provide for a polished UI, and Heroku's hosting combin
 ## Installation
 - Visit the deployed site at [Good Burger 2](https://damp-tor-93239.herokuapp.com/) for demo.
 - Otherwise, fork or clone the GitHub repo to your machine.
-- Ensure that you have Node.js and MySQL installed on your machine
-- Set up the database using MySQL to run the schema.sql and seeds.sql files
+- Ensure that you have Node.js and MySQL installed on your machine, as well as Gulp.
 - If you have a password that protects your MySQL root user, enter that password in the connection.js file in the cloned repo
-- In your CLI, navigate to the cloned directory. Install the npm dependencies and start the server.
+- In your CLI, navigate to the cloned directory. Install the npm dependencies and run gulp.
 
   `npm install`
 
-  `node server.js`
+  `gulp`
 
 This Project uses EditorConfig to standardize text editor configuration.
 Visit [https://editorconfig.org/](https://editorconfig.org/)
@@ -45,8 +44,12 @@ Run `npm run -s eslint .` to see ESLint errors and warnings.
 
 This project uses gulp to convert sass files into css files. Additionally, it converts css and javascript files into minified files and uses those minified files on production. Run `gulp` to run all the gulp tasks.
 
-Run `gulp serve` to watch for changes in scss and js files.
+The command `gulp` will automatically launch the project in google chrome.
 
-When changes are ready to be pushed, run `gulp` to minify css and js. Then run `npm run watch` to start nodemon. Then navigate to localhost:8080
+The files watched by gulp are the client js and sass files.
 
-- Good Burger 2 runs locally on port 8080. Open your favorite web browser and navigate to localhost:8080 and check out Good Burger!
+Client side js files are located at `public/assets/js/*.js`. Editing these files and saving will kick off a gulp build and auto refresh your development workspace.
+
+Sass files are located at `sass/partials/*.scss`. Editing these files and saving will kick off a gulp build and auto refresh your development workspace.
+
+🍔 Welcome to goodburger, home of the goodburger, can I take your order 🍔
