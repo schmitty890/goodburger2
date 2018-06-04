@@ -9,14 +9,14 @@ var maps = require('gulp-sourcemaps');
 // remove dist and public assets css
 gulp.task('clean', function() {
   console.log('gulp clean task');
-  gulp.src([
+  return gulp.src([ // return acts as sort of a promise, without the return statement, other tasks wont know until the clean task is finished.
     'public/assets/build/'
       ])
       .pipe(clean());
 });
 
 // convert sass into css, concatenate and minify. add it to build/css folder
-gulp.task('compileSass', function() {
+gulp.task('compileSass', function() { // clean is a dependency of compileSass
   console.log('gulp styles task');
   gulp.src('sass/styles.scss')
     .pipe(maps.init())
@@ -40,4 +40,13 @@ gulp.task('scripts', function() {
       .pipe(gulp.dest('public/assets/build/js'));
 });
 
-gulp.task('default', ['clean', 'scripts', 'compileSass']);
+gulp.task('watchSass', function() {
+  gulp.watch('sass/**/*.scss', ['compileSass']);
+})
+
+gulp.task('build', ['scripts', 'compileSass']);
+
+
+gulp.task('default', ['clean'], function() {
+  gulp.start('build');
+});

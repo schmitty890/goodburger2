@@ -40,5 +40,4 @@
       location.reload();
     });
   });
-  var test = no;
 })(jQuery);

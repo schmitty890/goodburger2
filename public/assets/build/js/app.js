@@ -40,7 +40,6 @@
       location.reload();
     });
   });
-  var test = no;
 })(jQuery);
 
 //# sourceMappingURL=app.js.map
