@@ -40,4 +40,5 @@
       location.reload();
     });
   });
+  console.log('ayo');
 })(jQuery);
