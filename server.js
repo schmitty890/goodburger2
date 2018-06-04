@@ -4,7 +4,7 @@ var exphbs = require("express-handlebars");
 var dotenv = require('dotenv').config();
 
 var app = express();
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 20080;
 
 var db = require("./models");
 
