@@ -28,7 +28,7 @@ gulp.task('compileSass', function() { // clean is a dependency of compileSass
     .pipe(gulp.dest('public/assets/build/css'));
 });
 
-// concat and minify public assets js scripts that end in .js
+// concat, map, and write js to build folder
 gulp.task('concatScripts', function() {
   console.log('gulp concatScripts task');
   return gulp.src([
@@ -41,6 +41,7 @@ gulp.task('concatScripts', function() {
       .pipe(gulp.dest('public/assets/build/js'));
 });
 
+// create minified css to build folder
 gulp.task('minifyCSS', ['compileSass'], function() {
   console.log('gulp minifyCSS task');
   gulp.src([
@@ -51,6 +52,7 @@ gulp.task('minifyCSS', ['compileSass'], function() {
     .pipe(gulp.dest('public/assets/build/css/'));
 })
 
+// minify javascript to the build folder
 gulp.task('minifyScripts', ['concatScripts'], function() {
   console.log('gulp minifyScripts task');
   gulp.src([
@@ -61,17 +63,20 @@ gulp.task('minifyScripts', ['concatScripts'], function() {
     .pipe(gulp.dest('public/assets/build/js/'));
 });
 
+// watch files for changes
 gulp.task('watchFiles', function() {
   console.log('gulp watchFiles task');
   gulp.watch('sass/**/*.scss', ['compileSass']);
   gulp.watch('public/assets/js/*.js', ['concatScripts']);
 })
 
+// serve watchfiles - alias
 gulp.task('serve', ['watchFiles']);
 
+// run build
 gulp.task('build', ['concatScripts', 'compileSass', 'minifyScripts', 'minifyCSS']);
 
-
+// default gulp command runs clean, then runs build
 gulp.task('default', ['clean'], function() {
   gulp.start('build');
 });
