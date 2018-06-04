@@ -10,13 +10,13 @@ var maps = require('gulp-sourcemaps');
 gulp.task('clean', function() {
   console.log('gulp clean task');
   gulp.src([
-    'public/assets/build'
+    'public/assets/build/'
       ])
       .pipe(clean());
 });
 
 // convert sass into css, concatenate and minify. add it to build/css folder
-gulp.task('styles', function() {
+gulp.task('compileSass', function() {
   console.log('gulp styles task');
   gulp.src('sass/styles.scss')
     .pipe(maps.init())
@@ -33,9 +33,11 @@ gulp.task('scripts', function() {
   gulp.src([
     './public/assets/js/*.js'
       ])
+      .pipe(maps.init())
       .pipe(concat('app.js'))
-      .pipe(uglify())
+      .pipe(maps.write('./'))
+      // .pipe(uglify())
       .pipe(gulp.dest('public/assets/build/js'));
 });
 
-gulp.task('default', ['clean', 'scripts', 'styles']);
+gulp.task('default', ['clean', 'scripts', 'compileSass']);
