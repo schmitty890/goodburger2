@@ -40,7 +40,7 @@
       location.reload();
     });
   });
-  console.log('ayo');
+  console.log('test1');
 })(jQuery);
 
-console.log('test');
+console.log('test2');

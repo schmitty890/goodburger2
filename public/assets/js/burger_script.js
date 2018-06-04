@@ -40,5 +40,5 @@
       location.reload();
     });
   });
-  console.log('ayo');
+  console.log('test1');
 })(jQuery);
