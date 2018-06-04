@@ -10,14 +10,14 @@ var watchSass = require("gulp-watch-sass");
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 
+// when served, watch files. call browser-sync
 gulp.task('serve', ['browser-sync'], function() {
   gulp.watch('public/assets/js/*.js').on('change', reload);
   gulp.watch('public/assets/build/css/*.css').on('change', reload);
   gulp.watch('sass/partials/*.scss', ['sass']);
-  // gulp.watch('/**/*.css').on('change', reload);
 });
 
-// nodemon listen on localhost 20080
+// browser-sync call nodemon
 gulp.task('browser-sync', ['nodemon'], function() {
   browserSync.init(null, {
     proxy: 'http://localhost:20080',
@@ -26,6 +26,7 @@ gulp.task('browser-sync', ['nodemon'], function() {
   });
 });
 
+// nodemon calls sass and concatScripts
 gulp.task('nodemon', ['sass', 'concatScripts'], function(done) {
   var running = false;
   return nodemon({
@@ -63,13 +64,12 @@ gulp.task('clean', function() {
       .pipe(clean());
 });
 
-// // concat, map, and write js to build folder
+// concat, map, and write js to build folder
 gulp.task('concatScripts', function() {
   console.log('gulp concatScripts task');
   return gulp.src([
     './public/assets/js/*.js'
       ])
-      // .pipe(maps.init({loadMaps: true}))
       .pipe(maps.init())
       .pipe(concat('app.js'))
       .pipe(gulp.dest('public/assets/build/js'))
@@ -78,26 +78,3 @@ gulp.task('concatScripts', function() {
       .pipe(maps.write('./'))
       .pipe(gulp.dest('public/assets/build/js'));
 });
-
-// return gulp.src(sourceFiles)
-//     .pipe(sourcemaps.init())
-//     .pipe(plumber())
-//     .pipe(concat(filenameRoot + '.js'))
-//     .pipe(gulp.dest(destinationFolder)) // save .js
-//     .pipe(uglify({ preserveComments: 'license' }))
-//     .pipe(rename({ extname: '.min.js' }))
-//     .pipe(sourcemaps.write('maps'))
-//     .pipe(gulp.dest(destinationFolder)) // save .min.js
-
-// convert sass into css, concatenate and minify. add it to build/css folder
-// gulp.task('compileSass', function() { // clean is a dependency of compileSass
-//   console.log('gulp compileSass task');
-//   return gulp.src('sass/styles.scss')
-//     .pipe(maps.init())
-//     .pipe(sass())
-//     .pipe(maps.write('./'))
-//     // .pipe(concat('app.css'))
-//     // .pipe(cssMin())
-//     .pipe(gulp.dest('public/assets/css/'))
-//     .pipe(gulp.dest('public/assets/build/css'));
-// });
